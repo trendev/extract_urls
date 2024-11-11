@@ -36,4 +36,4 @@ def extract_urls(text_content):
     """
     url_pattern = re.compile(r'(?:https?://)?(?:[\w/\-?=%.]+\.)+[\w/\-&?=%.]+')
     urls = url_pattern.findall(text_content)
-    return list(set(url for url in urls if is_url(url)))
+    return sorted(list(set(url for url in urls if is_url(url))))
