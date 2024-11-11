@@ -1,3 +1,8 @@
+"""
+Utility functions for URL extraction and validation.
+This module contains helper functions to identify and extract URLs.
+"""
+
 import re
 from urllib.parse import urlparse
 

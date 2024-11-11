@@ -1,6 +1,13 @@
-from url_extractor import is_url, extract_urls
-import requests
-import sys
+"""
+Main script for extracting URLs using the extract_urls library.
+This script leverages URL extraction functions to process input data.
+"""
+
+import sys  # Standard library import
+
+import requests  # Third-party import
+
+from url_extractor import is_url, extract_urls  # Local module import
 
 
 def fetch_content(file_or_url):
