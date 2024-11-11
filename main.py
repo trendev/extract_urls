@@ -54,17 +54,17 @@ def fetch_content(file_or_url):
 
 def extract_urls(text_content):
     """
-    Extract URLs from the given text content.
+    Extract valid URLs from the given text content.
 
     Args:
         text_content (str): The input text content.
 
     Returns:
-        list: A list of unique URLs found in the content.
+        list: A list of unique, valid URLs found in the content.
     """
-    url_pattern = re.compile(
-        r'(?:(?:https?|ftp):\/\/)?[\w/\-?=%.]+\.[\w/\-&?=%.]+')
-    return list(set(url_pattern.findall(text_content)))
+    url_pattern = re.compile(r'(?:https?://)?(?:[\w/\-?=%.]+\.)+[\w/\-&?=%.]+')
+    urls = url_pattern.findall(text_content)
+    return list(set(url for url in urls if is_url(url)))
 
 
 if __name__ == "__main__":
